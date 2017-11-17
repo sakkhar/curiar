@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 #import StringIO
-#import qrcode
+import qrcode
 from django.contrib.auth.models import User
 
 from django.core.files.uploadedfile import InMemoryUploadedFile

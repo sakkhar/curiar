@@ -24,7 +24,7 @@ def view_qr_code(request):
     instance = SendProduct(**data_dict)
     instance.user = request.user
     img_name = instance.generate_qrcode
-    print img_name
+    print ("img_name")
     if request.POST:
         # import pdb;pdb.set_trace()
         # instance.save()
@@ -59,7 +59,7 @@ def product_list(request):
     query = SendProduct.objects.filter(user=request.user)
     total_taka = query.aggregate(total=Sum(F('payable_amount') + F('delivery_charge')))
     paid = query.filter(paid=1).aggregate(paid=Sum(F('payable_amount') + F('delivery_charge')))
-    print total_taka
+    print ("total_taka")
     context = {
         'title': 'My Product',
         'product': query,

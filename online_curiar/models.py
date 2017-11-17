@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-#import StringIO
-import qrcode
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
+
+    import qrcode
 from django.contrib.auth.models import User
 
 from django.core.files.uploadedfile import InMemoryUploadedFile
